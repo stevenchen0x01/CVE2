@@ -1,4 +1,4 @@
-# XunRuiCms has unserialization  and code excute vulnerability.
+# XunRuiCms has deserialization  and code excute vulnerability.
 
 ## supplier 
 https://gitee.com/dayrui/xunruicms/archive/refs/tags/4.6.3.zip
