@@ -1,23 +1,22 @@
-# TOTOlink X18 Unauthorized Arbitrary Command Execution vulnerability
+# TOTO Link X18 Unauthorized Arbitrary Command Execution vulnerability
 
-## supplier 
+## Supplier 
 
 https://www.totolink.net/home/menu/detail/menu_listtpl/download/id/226/ids/36.html
 
 version:V9.1.0cu.2024_B20220329	
 
-## Vulnerability file
+## Vulnerability File
 
 setL2tpdConfig function in cstecgi.cgi
 
-## describe
+## Describe
 
-In the setL2tpdConfig function in the firmware of X18 , there are arbitrary system command vulnerabilities and RCE vulnerabilities, which can be executed by arbitrary system commands to obtain server permissions, bounce shells, etc.
+In the setL2tpdConfig function in the firmware of X18, there are arbitrary system command vulnerabilities and RCE vulnerabilities, which can be executed by arbitrary system commands to obtain server permissions, bounce shells, etc.
 
-## code analysis
+## Code Analysis
 
-The vulnerability trigger points and the source code of the cstecgi.cgi file are as follows
-setL2tpdConfig  function, you can see that the value of the obtained Enabled is saved to Var, and then the value of the servermtu is saved to v10, so when Enabled=1 enters the code statement, passes the content of servemtu to dosystem, and constructs payload to directly execute system commands. dosystem is a function that encapsulates the system.
+The vulnerability trigger points and the source code of the cstecgi.cgi file are as follows setL2tpdConfig  function, you can see that the value of the obtained Enabled is saved to Var, and then the value of the servermtu is saved to v10, so when Enabled=1 enters the code statement, passes the content of servemtu to dosystem, and constructs payload to directly execute system commands. dosystem is a function that encapsulates the system.
 
 ![Image](https://github.com/user-attachments/assets/b52288eb-46f2-4bcb-b95a-79b968462c40)
 
